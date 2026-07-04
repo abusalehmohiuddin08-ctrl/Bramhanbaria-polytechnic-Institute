@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ব্রাহ্মণবাড়িয়া পলিটেকনিক ইনস্টিটিউট</title>
+    <style>
+        /* CSS variables for theme consistency */
+        :root {
+            --primary-color: #006633;
+            --secondary-color: #f4b41a;
+            --dark-color: #333333;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --accent-blue: #1a5276;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Kohinoor, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* Top Government Bar Style */
+        .gov-bar {
+            background-color: #111;
+            color: var(--white);
+            font-size: 13px;
+            padding: 6px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .gov-bar a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        .gov-bar a:hover {
+            color: var(--white);
+        }
+
+        /* Main Header Section */
+        header {
+            background-color: var(--white);
+            padding: 20px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .logo-title-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Official Logo Styling */
+        .institute-logo {
+            width: 85px;
+            height: 85px;
+            object-fit: contain;
+        }
+
+        .title-area h1 {
+            color: var(--primary-color);
+            font-size: 26px;
+            margin-bottom: 5px;
+        }
+
+        .title-area p {
+            font-size: 14px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .code-info {
+            text-align: right;
+            font-size: 14px;
+            background: #eef7f2;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border-left: 4px solid var(--primary-color);
+            line-height: 1.5;
+        }
+
+        /* Navigation Menu */
+        nav {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            list-style: none;
+            padding: 0 50px;
+        }<img class="institute-logo" src="https://i.ibb.co/3ykbMyp/image-339861.png" alt="ব্রাহ্মণবাড়িয়া পলিটেকনিক ইনস্টিটিউট লোগো">
+
+        .nav-container li {
+            position: relative;
+        }
+
+        .nav-container li a {
+            display: block;
+            color: var(--white);
+            padding: 15px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-container li a:hover, .nav-container li.active a {
+            background-color: #004d26;
+            color: var(--secondary-color);
+        }
+
+        /* Layout Grid */
+        .main-wrapper {
+            max-width: 1300px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 20px;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            background: linear-gradient(135deg, #00552b, #1a5276);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .hero-banner h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        /* Main Content Cards */
+        .content-card {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        /* Notice Board Elements */
+        .notice-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 10px;
+            border-bottom: 1px dashed #ddd;
+            transition: background 0.2s;
+        }
+        .notice-item:hover {
+            background-color: #f5fafd;
+        }
+        .notice-date {
+            background-color: #e6f2ec;
+            color: var(--primary-color);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .notice-text {
+            flex-grow: 1;
+            margin-left: 15px;
+            color: #333;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .notice-text:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Grid for Technologies/Departments */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .tech-card {
+            background: #fdfdfd;
+            border: 1px solid #e0e0e0;
+            border-top: 4px solid var(--accent-blue);
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .tech-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Sidebar Panels */
+        .sidebar-panel {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .profile-box {
+            text-align: center;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+        }
+        .profile-img-placeholder {
+            width: 110px;
+            height: 110px;
+            background-color: #eee;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #777;
+            border: 3px solid var(--primary-color);
+        }
+        .profile-name {
+            font-weight: bold;
+            color: var(--dark-color);
+            font-size: 16px;
+            margin-bottom: 3px;
+        }
+        .profile-designation {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Sidebar Dynamic Links */
+        .links-list {
+            list-style: none;
+        }
+        .links-list li {
+            margin-bottom: 8px;
+        }
+        .links-list li a {
+            color: #444;
+            text-decoration: none;
+            display: block;
+            padding: 8px 10px;
+            background: #f5f5f5;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        .links-list li a:hover {
+            background: var(--primary-color);
+            color: white;
+            padding-left: 14px;
+        }
+
+        /* Emergency Numbers Area */
+        .hotline-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+        .hotline-box {
+            background: #fff4e6;
+            border: 1px solid #ffd8a8;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .hotline-num {
+            font-size: 22px;
+            font-weight: bold;
+            color: #e67e22;
+        }
+        .hotline-label {
+            font-size: 12px;
+            color: #555;
+        }
+
+        /* Footer Style */
+        footer {
+            background-color: #222;
+            color: #bbb;
+            padding: 40px 50px 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+        .footer-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 17px;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 10px;
+        }
+        .footer-section p {
+            line-height: 1.7;
+        }
+        .bottom-footer {
+            text-align: center;
+            padding-top: 25px;
+            margin-top: 25px;
+            border-top: 1px solid #333;
+            font-size: 13px;
+        }
+
+        /* Interactive Contact Form */
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 11px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .contact-form button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 15px;
+            transition: background 0.2s;
+        }
+        .contact-form button:hover {
+            background-color: #004d26;
+        }
+
+        /* Tab Switch Display System */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Responsive Layout Overrides */
+        @media (max-width: 950px) {
+            .main-wrapper {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            .code-info {
+                text-align: center;
+                width: 100%;
+            }
+            .nav-container {
+                flex-wrap: wrap;
+                padding: 0 10px;
+            }
+            .gov-bar {
+                padding: 6px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gov-bar">
+        <div>বাংলাদেশ জাতীয় তথ্য বাতায়ন</div>
+        <div><a href="#">English</a> | <a href="#">অনুসন্ধান</a></div>
+    </div>
+
+    <header>
+        <div class="logo-title-container">
+            <img class="institute-logo" src="image_339861.png" alt="ব্রাহ্মণবাড়িয়া পলিটেকনিক ইনস্টিটিউট লোগো">
+            <div class="title-area">
+                <h1>ব্রাহ্মণবাড়িয়া পলিটেকনিক ইনস্টিটিউট</h1>
+                <p>কারিগরি ও মাদ্রাসা শিক্ষা বিভাগ, শিক্ষা মন্ত্রণালয়।</p>
+            </div>
+        </div>
+        <div class="code-info">
+            <strong>বাকাশিবো প্রতিষ্ঠান কোড:</strong> ৬৪০২৪<br>
+            <strong>ব্যানবেইস EIIN:</strong> ১৩২৩৪৬
+        </div>
+    </header>
+
+    <nav>
+        <ul class="nav-container">
+            <li class="nav-item active" onclick="switchTab(event, 'home')"><a href="javascript:void(0);">হোম</a></li>
+            <li class="nav-item" onclick="switchTab(event, 'about')"><a href="javascript:void(0);">আমাদের সম্পর্কে</a></li>
+            <li class="nav-item" onclick="switchTab(event, 'departments')"><a href="javascript:void(0);">বিভাগসমূহ</a></li>
+            <li class="nav-item" onclick="switchTab(event, 'notices')"><a href="javascript:void(0);">নোটিশ বোর্ড</a></li>
+            <li class="nav-item" onclick="switchTab(event, 'gallery')"><a href="javascript:void(0);">গ্যালারি</a></li>
+            <li class="nav-item" onclick="switchTab(event, 'contact')"><a href="javascript:void(0);">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-wrapper">
+        
+        <main>
+            <div class="hero-banner">
+                <h2>স্বাগতম, ব্রাহ্মণবাড়িয়া পলিটেকনিক ইনস্টিটিউটে</h2>
+                <p>দক্ষ মানবসম্পদ ও আন্তর্জাতিক মানের কারিগরি শিক্ষা নিশ্চিতকরণে আমরা সদাপ্রস্তুত।</p>
+            </div>
+
+            <div id="home" class="tab-content active">
+                <div class="content-card">
+                    <h3 class="section-title">সর্বশেষ বিজ্ঞপ্তি</h3>
+                    <div class="notice-item">
+                        <span class="notice-date">০৪-০১-২০২৬</span>
+                        <a href="#" class="notice-text">যথাসময়ে এবং যথানিয়মে এসিআর অনুস্বাক্ষর, প্রতিস্বাক্ষর ও ডোসিয়ার সংরক্ষণকারী কর্তৃপক্ষের দপ্তরে প্রেরণ।</a>
+                    </div>
+                    <div class="notice-item">
+                        <span class="notice-date">১১-০৩-২০২৫</span>
+                        <a href="#" class="notice-text">উপবৃত্তি আবেদন ফরম এবং সঠিকভাবে পূরণ সংক্রান্ত জরুরি বিজ্ঞপ্তি।</a>
+                    </div>
+                    <div style="text-align: right; margin-top: 15px;">
+                        <a href="javascript:void(0);" onclick="switchTab(null, 'notices')" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">সকল নোটিশ দেখুন »</a>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3 class="section-title">চলমান প্রযুক্তিসমূহ (৪ বছর মেয়াদী ডিপ্লোমা ইন ইঞ্জিনিয়ারিং)</h3>
+                    <p>ইনституটিউটে বর্তমানে আধুনিক ল্যাব ও দক্ষ শিক্ষক দ্বারা ৪টি স্পেশালাইজড টেকনোলজিতে শিক্ষা কার্যক্রম সফলভাবে পরিচালিত হচ্ছে:</p>
+                    <div class="tech-grid">
+                        <div class="tech-card">কম্পিউটার সায়েন্স অ্যান্ড টেকনোলজি (CST)</div>
+                        <div class="tech-card">ইলেকট্রনিক্স টেকনোলজি</div>
+                        <div class="tech-card">ইলেকট্রোমেডিকেল টেকনোলজি</div>
+                        <div class="tech-card">আর্কিটেকচার অ্যান্ড ইন্টেরিয়র ডিজাইন</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="about" class="tab-content">
+                <div class="content-card">
+                    <h3 class="section-title">এক নজরে প্রতিষ্ঠান</h3>
+                    <p>ব্রাহ্মণবাড়িয়া পলিটেকনিক ইনস্টিটিউট ২০০৫ সালে প্রতিষ্ঠিত গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের একটি মানসম্মত কারিগরি শিক্ষা প্রতিষ্ঠান। এটি ব্রাহ্মণবাড়িয়ার বিজয়নগর উপজেলার ইসলামপুরের একটি দৃষ্টিনন্দন ও শান্ত পরিবেশে অবস্থিত। কারিগরি শিক্ষা অধিদপ্তর (DTE) এবং বাংলাদেশ কারিগরি শিক্ষা বোর্ড (BTEB) এর প্রত্যক্ষ নির্দেশনায় এখানে ৪ বছর মেয়াদি ডিপ্লোমা কোর্স পরিচালিত হয়।</p>
+                    <p style="margin-top: 15px;"><strong>ভিশন ও মিশন:</strong> তাত্ত্বিক ও ব্যবহারিক প্রশিক্ষণের বাস্তবভিত্তিক জ্ঞান প্রয়োগের মাধ্যমে শিক্ষার্থীদের দক্ষ গ্লোবাল ইঞ্জিনিয়ার হিসেবে তৈরি করা।</p>
+                </div>
+            </div>
+
+            <div id="departments" class="tab-content">
+                <div class="content-card">
+                    <h3 class="section-title">একাডেমিক অনুষদসমূহ</h3>
+                    <p>আমাদের আধুনিক কারিগরি প্রযুক্তিসমূহের সংক্ষিপ্ত বিবরণী নিচে তুলে ধরা হলো:</p>
+                    <div style="margin-top: 15px;">
+                        <h4 style="color: var(--accent-blue); margin-top: 12px;">১. কম্পিউটার সায়েন্স অ্যান্ড টেকনোলজি</h4>
+                        <p style="color: #555;">উন্নত ল্যাবরেটরি, হাই-স্পিড ইন্টারনেট সুবিধা, সফটওয়্যার ডেভেলপমেন্ট এবং নেটওয়ার্কিং ভিত্তিক প্র্যাকটিক্যাল শিক্ষা।</p>
+                        
+                        <h4 style="color: var(--accent-blue); margin-top: 12px;">২. ইলেকট্রনিক্স টেকনোলজি</h4>
+                        <p style="color: #555;">আধুনিক সার্কিট ডিজাইন, মাইক্রোপ্রসেসর ও ডিজিটাল ইলেকট্রনিক্স ডিভাইস মেকানিজমের উপর নিবিড় প্রশিক্ষণ।</p>
+                        
+                        <h4 style="color: var(--accent-blue); margin-top: 12px;">৩. ইলেকট্রোমেডিকেল টেকনোলজি</h4>
+                        <p style="color: #555;">চিকিৎসা ক্ষেত্রে ব্যবহৃত আধুনিক বায়ো-মেডিকেল ও hospital ভিত্তিক ইলেকট্রনিক্স ডিভাইস রক্ষণাবেক্ষণ বিষয়ক আধুনিক ইঞ্জিনিয়ারিং কোর্স।</p>
+                        
+                        <h4 style="color: var(--accent-blue); margin-top: 12px;">৪. আর্কিটেকচার অ্যান্ড ইন্টেরিয়র ডিজাইন</h4>
+                        <p style="color: #555;">ভবন ও অভ্যন্তরীণ নান্দনিক ডিজাইন বা সাজসজ্জার জন্য ক্যাড (CAD) সফটওয়্যার ও ড্রয়িং ভিত্তিক প্র্যাকটিক্যাল ল্যাব ক্লাস।</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="notices" class="tab-content">
+                <div class="content-card">
+                    <h3 class="section-title">নোটিশ বোর্ড আর্কাইভ</h3>
+                    <div class="notice-item">
+                        <span class="notice-date">০৪-০১-২০২৬</span>
+                        <a href="#" class="notice-text">যথাসময়ে এবং যথানিয়মে এসিআর অনুস্বাক্ষর, প্রতিস্বাক্ষর ও ডোসিয়ার সংরক্ষণকারী কর্তৃপক্ষের দপ্তরে প্রেরণ সংক্রান্ত।</a>
+                    </div>
+                    <div class="notice-item">
+                        <span class="notice-date">১১-০৩-২০২৫</span>
+                        <a href="#" class="notice-text">২০২৪-২০২৫ শিক্ষাবর্ষের সকল নিয়মিত ছাত্র-ছাত্রীদের উপবৃত্তি ফরম জমাদান প্রসঙ্গে।</a>
+                    </div>
+                    <div class="notice-item">
+                        <span class="notice-date">১৫-১২-২০২৪</span>
+                        <a href="#" class="notice-text">সেমিস্টার ফাইনাল পরীক্ষার সংশোধিত চুড়ান্ত রুটিন প্রকাশ।</a>
+                    </div>
+                    <div class="notice-item">
+                        <span class="notice-date">২২-১০-২০২৪</span>
+                        <a href="#" class="notice-text">৮ম পর্বের শিক্ষার্থীদের ইন্ডাস্ট্রিয়াল অ্যাটাচমেন্ট (বাস্তব প্রশিক্ষণ) শুরু হওয়া সংক্রান্ত নোটিশ।</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="gallery" class="tab-content">
+                <div class="content-card">
+                    <h3 class="section-title">ক্যাম্পাস ফটো গ্যালারি</h3>
+                    <p>ব্রাহ্মণবাড়িয়া পলিটেকনিক ইনস্টিটিউট এর মূল একাডেমিক ভবন ও চারপাশের ছবি:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 15px;">
+                        <div style="background-color: #ddd; height: 190px; display: flex; align-items: flex-end; padding: 15px; border-radius: 6px; box-shadow: inset 0 -50px 50px rgba(0,0,0,0.7); color: white; font-weight: bold;">
+                            মূল প্রশাসনিক ও ৪-তলা একাডেমিক ভবন ১
+                        </div>
+                        <div style="background-color: #ccc; height: 190px; display: flex; align-items: flex-end; padding: 15px; border-radius: 6px; box-shadow: inset 0 -50px 50px rgba(0,0,0,0.7); color: white; font-weight: bold;">
+                            ইনস্টিটিউটের অভ্যন্তরীণ সবুজ চত্বর ও বাগান
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contact" class="tab-content">
+                <div class="content-card">
+                    <h3 class="section-title">যোগাযোগ করুন</h3>
+                    <p style="margin-bottom: 15px;">যেকোনো ধরণের তথ্য বা অনুসন্ধানের জন্য নিচের ফর্মটি পূরণ করে পাঠান:</p>
+                    <form class="contact-form" onsubmit="event.preventDefault(); alert('ধন্যবাদ! আপনার বার্তাটি সফলভাবে সার্ভারে প্রেরণ করা হয়েছে।');">
+                        <input type="text" placeholder="আপনার পুরো নাম" required>
+                        <input type="email" placeholder="আপনার ইমেইল এড্রেস" required>
+                        <textarea rows="5" placeholder="আপনার মন্তব্য অথবা প্রশ্নটি এখানে লিখুন..." required></textarea>
+                        <button type="submit">বার্তা পাঠান</button>
+                    </form>
+                    <div style="margin-top: 25px; border-top: 1px solid #eee; padding-top: 15px;">
+                        <p><strong>ঠিকানা:</strong> ইসলামপুর, বিজয়নগর, ব্রাহ্মণবাড়িয়া, বাংলাদেশ।</p>
+                        <p><strong>অফিসিয়াল ইমেইল:</strong> bbpi_2005@yahoo.com</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <aside>
+            <div class="sidebar-panel">
+                <h3 class="section-title" style="font-size: 16px;">প্রতিষ্ঠান প্রধান</h3>
+                <div class="profile-box">
+                    <div class="profile-img-placeholder">অধ্যক্ষের ছবি</div>
+                    <div class="profile-name">মোহসিনুর রহমান</div>
+                    <div class="profile-designation">অধ্যক্ষ<br>ব্রাহ্মণবাড়িয়া পলিটেকনিক ইনস্টিটিউট</div>
+                </div>
+            </div>
+
+            <div class="sidebar-panel">
+                <h3 class="section-title" style="font-size: 16px;">উর্ধ্বতন কর্মকর্তা</h3>
+                <div style="font-size: 13.5px; line-height: 1.6;">
+                    <p><strong>মহাপরিচালক:</strong><br>আবুল খায়ের মোঃ আক্কাস আলী<br>কারিগরি শিক্ষা অধিদপ্তর</p>
+                    <hr style="margin: 10px 0; border: none; border-top: 1px solid #eee;">
+                    <p><strong>সচিব:</strong><br>মোঃ দাউদ মিয়া এনডিসি<br>কারিগরি ও মাদ্রাসা শিক্ষা বিভাগ</p>
+                </div>
+            </div>
+
+            <div class="sidebar-panel">
+                <h3 class="section-title" style="font-size: 16px;">গুরুত্বপূর্ণ লিংকসমূহ</h3>
+                <ul class="links-list">
+                    <li><a href="http://www.bteb.gov.bd" target="_blank">বাংলাদেশ কারিগরি শিক্ষা বোর্ড</a></li>
+                    <li><a href="http://www.techedu.gov.bd" target="_blank">কারিগরি শিক্ষা অধিদপ্তর</a></li>
+                    <li><a href="http://www.tmed.gov.bd" target="_blank">কারিগরি ও মাদ্রাসা শিক্ষা বিভাগ</a></li>
+                    <li><a href="http://www.banbeis.gov.bd" target="_blank">ব্যানবেইস (BANBEIS)</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-panel">
+                <h3 class="section-title" style="font-size: 16px;">জরুরি হটলাইন</h3>
+                <div class="hotline-grid">
+                    <div class="hotline-box">
+                        <div class="hotline-num">৩৩৩</div>
+                        <div class="hotline-label">জাতীয় সেবা</div>
+                    </div>
+                    <div class="hotline-box">
+                        <div class="hotline-num">৯৯৯</div>
+                        <div class="hotline-label">জরুরি সেবা</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>ব্রাহ্মণবাড়িয়া পলিটেকনিক ইনস্টিটিউট</h3>
+                <p>শিক্ষা মন্ত্রণালয়ের কারিগরি ও মাদ্রাসা শিক্ষা বিভাগের আওতাধীন একটি স্বনামধন্য ও আধুনিক কারিগরি শিক্ষাপ্রতিষ্ঠান।</p>
+            </div>
+            <div class="footer-section">
+                <h3>ই-সেবাসমূহ</h3>
+                <ul style="list-style: none; padding-left: 0; line-height: 2;">
+                    <li><a href="#" style="color: #bbb; text-decoration: none;">অনলাইন ভর্তি তথ্য</a></li>
+                    <li><a href="#" style="color: #bbb; text-decoration: none;">সিটিজেন চার্টার</a></li>
+                    <li><a href="#" style="color: #bbb; text-decoration: none;">অভিযোগ প্রতিকার ব্যবস্থা</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>যোগাযোগের ঠিকানা</h3>
+                <p>ইসলামপুর, বিজয়নগর, ব্রাহ্মণবাড়িয়া।<br>ইমেল: info@bbpi.gov.bd</p>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            স্বত্ব © ২০২৬ সর্বস্বত্ব সংরক্ষিত - 	ব্রাহ্মণবাড়িয়া পলিটেকনিক ইনস্টিটিউট | কারিগরি ও তথ্য সহায়তা: জাতীয় তথ্য বাতায়ন
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(event, tabId) {
+            // Hide all tab content panes
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove selection state from nav items
+            const navItems = document.querySelectorAll('.nav-container li');
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Target the requested pane and show it
+            const activeContent = document.getElementById(tabId);
+            if (activeContent) {
+                activeContent.classList.add('active');
+            }
+
+            // Highlight the clicked nav menu target element
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.add('active');
+            } else {
+                const targetLi = Array.from(document.querySelectorAll('.nav-container li')).find(li => {
+                    const attr = li.getAttribute('onclick');
+                    return attr && attr.includes(tabId);
+                });
+                if(targetLi) targetLi.classList.add('active');
+            }
+            
+            // Scroll interface comfortably to the top viewport
+            window.scrollTo({ top: 140, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
